@@ -3,20 +3,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'g++ working.cpp -o working_exec'
+                sh 'g++ working.cpp -o working_exec'
                 echo 'Build stage completed successfully'
             }
         }
         stage('Test') {
             steps {
-                bat 'working_exec'
+                sh './working_exec'
                 echo 'Test stage completed successfully'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                bat 'copy working_exec C:\\deploy\\working_exec'
+                sh 'cp working_exec /tmp/working_exec'
                 echo 'Deploy stage completed successfully'
             }
         }
