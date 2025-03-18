@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'g++ working.cpp -o working_exec'
+                sh 'g++ workinggg.cpp -o working_exec'
                 echo 'Build stage completed successfully'
             }
         }
@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh './working_exec'
                 echo 'Test stage completed successfully'
-            }
+            }sd
         }
         stage('Deploy') {
             steps {
